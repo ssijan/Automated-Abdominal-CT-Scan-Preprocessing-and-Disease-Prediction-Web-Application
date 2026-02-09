@@ -47,8 +47,9 @@ Clone the repository:
 Bash
 git clone [https://github.com/ssijan/Automated-Abdominal-CT-Scan-Preprocessing-and-Disease-Prediction-Web-Application.git](https://github.com/ssijan/Automated-Abdominal-CT-Scan-Preprocessing-and-Disease-Prediction-Web-Application.git)
 cd "Thesis Project"
+```
 Install Dependencies:
-
+```
 Bash
 pip install -r requirements.txt
 Add Model Weights: Place your protonet_best.pth, resnet50.h5, or .keras files inside the models/ directory.
@@ -60,6 +61,8 @@ python app.py
 Access the app at http://127.0.0.1:5000
 ```
 🎓 Thesis Credits
+```
 Author: Md. Sakibur Rahman, Jarin Tasmim Jinia
 Topic: Explainable Deep Learning Framework for Multi-Class Classification of Abdominal Diseases in Computed Tomography Imaging
 Year: 2026
+```
