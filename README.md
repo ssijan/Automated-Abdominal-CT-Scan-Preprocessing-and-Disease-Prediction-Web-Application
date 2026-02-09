@@ -40,7 +40,9 @@ This repository contains the source code for my thesis project: an end-to-end we
 └── models.json         # Metadata and configuration for models
 ```
 
-<img width="468" height="352" alt="image" src="https://github.com/user-attachments/assets/6c9ac9b6-eae5-4e65-a71c-d3984770e79e" />
+<img width="762" height="431" alt="image" src="https://github.com/user-attachments/assets/ffdc2962-5131-4e3c-868b-b61d9dc7dc01" />
+<img width="756" height="427" alt="image" src="https://github.com/user-attachments/assets/7d95aedc-71fc-4af9-9335-a85d24d2ee71" />
+
 
 ⚙️ Installation & Setup
 Note: Due to file size constraints (GitHub's 100MB limit), the pre-trained weights in the models/ folder are not included in this repository.
