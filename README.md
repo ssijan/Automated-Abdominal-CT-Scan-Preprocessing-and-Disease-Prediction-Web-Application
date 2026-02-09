@@ -39,6 +39,9 @@ This repository contains the source code for my thesis project: an end-to-end we
 ├── model_loader.py     # Logic for loading different model architectures
 └── models.json         # Metadata and configuration for models
 ```
+
+<img width="468" height="352" alt="image" src="https://github.com/user-attachments/assets/6c9ac9b6-eae5-4e65-a71c-d3984770e79e" />
+
 ⚙️ Installation & Setup
 Note: Due to file size constraints (GitHub's 100MB limit), the pre-trained weights in the models/ folder are not included in this repository.
 
