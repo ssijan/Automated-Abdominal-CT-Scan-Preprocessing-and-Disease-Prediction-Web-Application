@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Abdominal CT Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-section">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <span class="logo-text">CT Diagnosis Dashboard</span>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Results Dashboard</a></li>
+          <li><a href="{{ url_for('predict_page') }}">CT Scan Prediction</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon sun" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>
+          <svg class="icon moon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <section class="section card">
+        <h2>Upload CT Scan for Prediction</h2>
+        <p class="muted small">
+          Select a model, upload an abdominal CT slice, and run prediction. The system removes text overlays
+          automatically before classification.
+        </p>
+
+        <!-- Professional form shell -->
+        <div class="predict-shell">
+          <div class="predict-grid">
+            <div class="field">
+              <label for="modelSelectPredict">Model</label>
+              <select id="modelSelectPredict" class="input-select">
+                <option value="mobilenetv2">MobileNetV2</option>
+                <option value="resnet50">ResNet50</option>
+                <option value="proto_fewshot">FewShot Learning (few-shot)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="imageInput">CT Scan image</label>
+              <input type="file" id="imageInput" accept="image/*" class="input-file" />
+            </div>
+
+            <div class="field action">
+              <label class="invisible">Action</label>
+              <button id="predictBtn" type="button" class="primary-btn">
+                Run Prediction
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result box -->
+        <div id="predictionResult" class="result-box" style="display:none;"></div>
+
+        <!-- Side-by-side images -->
+        <div class="image-pair">
+          <div class="image-box">
+            <div class="image-title">Original</div>
+            <img id="previewImage" class="ct-image" style="display:none;" />
+          </div>
+
+          <div class="image-box">
+            <div class="image-title">Cleaned (text removed)</div>
+            <img id="cleanedImage" class="ct-image" style="display:none;" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Abdominal CT prediction – MobileNetV2, ResNet50 &amp; FewShot Learning models.</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

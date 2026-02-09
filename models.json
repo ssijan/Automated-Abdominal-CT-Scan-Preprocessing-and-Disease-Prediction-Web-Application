@@ -1,0 +1,278 @@
+{
+  "proto_fewshot": {
+    "name": "FewShot Learning (few-shot)",
+    "accuracy": 0.9833,
+    "description": "Few-shot FewShot Learning trained on 11 abdominal CT classes.",
+    "classes_full": [
+      "Abdominal_Wall_Hernia",
+      "Bulky_Uterus",
+      "Duodenum_Mass",
+      "Hepatic_Mass",
+      "Liver_SOL",
+      "Metastatic_Adenocarcinoma",
+      "Metastatic_Lesions",
+      "Multicentric_HCC",
+      "Normal",
+      "Ovary_Cyst",
+      "Renal_Cortical_Cysts"
+    ],
+    "class_short": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+    "epochs": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+"trainLoss": [0.7778,0.7490,0.7215,0.6952,0.6702,0.6465,0.6305,0.6076,0.5885,0.5682,0.5432,0.5297,0.5166,0.5098,0.5003,0.4925,0.4859,0.4803,0.4760,0.4728],
+"valLoss":   [0.7929,0.7628,0.7436,0.7152,0.6876,0.6608,0.6428,0.6160,0.5928,0.5583,0.5400,0.5274,0.5126,0.5045,0.5019,0.4936,0.4852,0.4769,0.4685,0.4601],
+"trainAcc":  [0.8327,0.8396,0.8478,0.8575,0.8685,0.8809,0.8935,0.9116,0.9256,0.9451,0.9619,0.9714,0.9817,0.9859,0.9913,0.9953,0.9981,0.9994,0.9994,0.9981],
+"valAcc":    [0.8562,0.8583,0.8629,0.8699,0.8793,0.8911,0.9161,0.9347,0.9468,0.9573,0.9696,0.9808,0.9873,0.9901,0.9951,0.9983,1.0000,1.0000,1.0000,0.9979]
+,
+    "confusion": {
+      "labels": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+      "matrix": [
+          [333, 0,   0,   6,   0,   0,   0,   0,   3,   0,   0], 
+          [0,   296, 0,   0,   0,   7,   0,   0,   3,   0,   0],  
+          [0,   0,   110, 0,   0,   0,   0,   0,   2,   0,   0],  
+          [0,   0,   0,   425, 0,   0,   0,   0,   0,   0,   0],  
+          [0,   0,   0,   0,   96,  0,   0,   0,   0,   0,   0], 
+          [0,   0,   0,   0,   0,   300, 0,   0,   0,   0,   0],  
+          [0,   0,   0,   0,   0,   0,   172, 0,   0,   0,   0], 
+          [0,   0,   0,   3,   0,   0,   0,   45,  0,   0,   0],  
+          [0,   8,   0,   0,   0,   0,   0,   0,   532, 0,   0],  
+          [0,   5,   0,   0,   0,   0,   0,   0,   0,   121, 0],  
+          [0,   0,   0,   3,   0,   0,   0,   0,   0,   0,   28]
+      ]
+    },
+    "per_class": [
+      {
+        "short": "AWH",
+        "full": "Abdominal_Wall_Hernia",
+        "precision": 0.994,
+        "recall": 0.974,
+        "f1": 0.984,
+        "support": 342
+      },
+      {
+        "short": "BU",
+        "full": "Bulky_Uterus",
+        "precision": 0.959,
+        "recall": 0.968,
+        "f1": 0.963,
+        "support": 306
+      },
+      {
+        "short": "DM",
+        "full": "Duodenum_Mass",
+        "precision": 1.000,
+        "recall": 0.982,
+        "f1": 0.991,
+        "support": 112
+      },
+      {
+        "short": "HM",
+        "full": "Hepatic_Mass",
+        "precision": 0.979,
+        "recall": 1.000,
+        "f1": 0.989,
+        "support": 425
+      },
+      {
+        "short": "LSOL",
+        "full": "Liver_SOL",
+        "precision": 1.000,
+        "recall": 1.000,
+        "f1": 1.000,
+        "support": 96
+      },
+      {
+        "short": "MA",
+        "full": "Metastatic_Adenocarcinoma",
+        "precision": 0.977,
+        "recall": 1.000,
+        "f1": 0.988,
+        "support": 300
+      },
+      {
+        "short": "ML",
+        "full": "Metastatic_Lesions",
+        "precision": 1.000,
+        "recall": 1.000,
+        "f1": 1.000,
+        "support": 172
+      },
+      {
+        "short": "MHCC",
+        "full": "Multicentric_HCC",
+        "precision": 1.000,
+        "recall": 0.938,
+        "f1": 0.968,
+        "support": 48
+      },
+      {
+        "short": "N",
+        "full": "Normal",
+        "precision": 0.989,
+        "recall": 0.985,
+        "f1": 0.987,
+        "support": 540
+      },
+      {
+        "short": "OC",
+        "full": "Ovary_Cyst",
+        "precision": 1.000,
+        "recall": 0.960,
+        "f1": 0.980,
+        "support": 126
+      },
+      {
+        "short": "RCC",
+        "full": "Renal_Cortical_Cysts",
+        "precision": 1.000,
+        "recall": 0.903,
+        "f1": 0.949,
+        "support": 31
+      }
+    ],
+    "macro": {
+      "precision": 0.990,
+      "recall": 0.974,
+      "f1": 0.983
+    }
+  },
+
+  "mobilenetv2": {
+    "name": "MobileNetV2 Classifier",
+    "accuracy": 0.9790,
+    "description": "Keras MobileNetV2 model trained for 11-class abdominal CT classification.",
+    "classes_full": [
+      "Abdominal_Wall_Hernia","Bulky_Uterus","Duodenum_Mass","Hepatic_Mass",
+      "Liver_SOL","Metastatic_Adenocarcinoma","Metastatic_Lesions",
+      "Multicentric_HCC","Normal","Ovary_Cyst","Renal_Cortical_Cysts"
+    ],
+    "class_short": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+    "epochs": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+    "trainLoss": [3.4609,1.7767,1.3800,1.1312,1.0629,0.9780,0.9276,0.9034,0.8594,0.8127,0.7832,0.7697,0.7354,0.7228,0.6949,0.6839,0.6635,0.6529,0.6505,0.6231],
+    "valLoss":   [1.6443,1.2900,1.1271,0.9861,0.9285,0.8321,0.8318,0.8145,0.8170,0.7881,0.7175,0.7175,0.6990,0.6762,0.6684,0.6483,0.6335,0.6370,0.6009,0.5931],
+    "trainAcc":  [0.2440,0.6932,0.8173,0.8866,0.9113,0.9241,0.9480,0.9488,0.9566,0.9588,0.9698,0.9761,0.9756,0.9806,0.9830,0.9823,0.9882,0.9799,0.9896,0.9888],
+    "valAcc":    [0.7425,0.8451,0.8913,0.9557,0.9497,0.9819,0.9759,0.9718,0.9638,0.9598,0.9940,0.9899,0.9960,0.9980,0.9960,0.9980,0.9960,0.9920,0.9980,1.0000],
+    "confusion": {
+      "labels": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+      "matrix": [
+        [68,0,0,0,0,0,0,0,0,0,0],
+        [0,61,0,0,0,0,0,0,0,0,0],
+        [0,0,22,0,0,0,0,0,0,0,0],
+        [0,0,0,85,0,0,0,0,0,0,0],
+        [0,0,0,0,19,0,0,0,0,0,0],
+        [0,0,0,0,0,60,0,0,0,0,0],
+        [0,0,0,0,0,0,34,0,0,0,0],
+        [0,0,0,0,0,0,0,9,0,0,0],
+        [0,0,0,0,0,0,0,0,108,0,0],
+        [0,0,0,0,0,0,0,0,0,25,0],
+        [0,0,0,0,0,0,0,0,0,0,6]
+      ]
+    },
+    "per_class": [
+      {"short":"AWH","full":"Abdominal_Wall_Hernia","precision":1.0,"recall":1.0,"f1":1.0,"support":68},
+      {"short":"BU","full":"Bulky_Uterus","precision":1.0,"recall":1.0,"f1":1.0,"support":61},
+      {"short":"DM","full":"Duodenum_Mass","precision":1.0,"recall":1.0,"f1":1.0,"support":22},
+      {"short":"HM","full":"Hepatic_Mass","precision":1.0,"recall":1.0,"f1":1.0,"support":85},
+      {"short":"LSOL","full":"Liver_SOL","precision":1.0,"recall":1.0,"f1":1.0,"support":19},
+      {"short":"MA","full":"Metastatic_Adenocarcinoma","precision":1.0,"recall":1.0,"f1":1.0,"support":60},
+      {"short":"ML","full":"Metastatic_Lesions","precision":1.0,"recall":1.0,"f1":1.0,"support":34},
+      {"short":"MHCC","full":"Multicentric_HCC","precision":1.0,"recall":1.0,"f1":1.0,"support":9},
+      {"short":"N","full":"Normal","precision":1.0,"recall":1.0,"f1":1.0,"support":108},
+      {"short":"OC","full":"Ovary_Cyst","precision":1.0,"recall":1.0,"f1":1.0,"support":25},
+      {"short":"RCC","full":"Renal_Cortical_Cysts","precision":1.0,"recall":1.0,"f1":1.0,"support":6}
+    ],
+    "macro": { "precision": 1.0, "recall": 1.0, "f1": 1.0 }
+  },
+
+  "mobilenetv2": {
+    "name": "MobileNetV2 Classifier",
+    "description": "Keras MobileNetV2 model trained for 11-class abdominal CT classification.",
+    "classes_full": [
+      "Abdominal_Wall_Hernia","Bulky_Uterus","Duodenum_Mass","Hepatic_Mass",
+      "Liver_SOL","Metastatic_Adenocarcinoma","Metastatic_Lesions",
+      "Multicentric_HCC","Normal","Ovary_Cyst","Renal_Cortical_Cysts"
+    ],
+    "class_short": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+    "epochs": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+    "trainLoss": [3.1527,1.9099,1.4532,1.1309,1.0373,0.9904,0.8737,0.8279,0.7914,0.7897,0.7291,0.7460,0.7101,0.6710,0.6587,0.6395,0.6145,0.6065,0.5915,0.5845],
+    "valLoss":   [1.7681,1.2680,1.0627,0.9384,0.8622,0.8233,0.7880,0.7505,0.7193,0.7008,0.6856,0.6653,0.6570,0.6550,0.6364,0.6162,0.6099,0.5858,0.5722,0.5545],
+    "trainAcc":  [0.2173,0.6380,0.7809,0.8845,0.9018,0.9188,0.9416,0.9516,0.9565,0.9584,0.9645,0.9644,0.9676,0.9782,0.9773,0.9774,0.9876,0.9823,0.9877,0.9844],
+    "valAcc":    [0.7726,0.8853,0.9296,0.9598,0.9738,0.9718,0.9718,0.9690,0.9680,0.9680,0.9680,0.9685,0.9680,0.9685,0.9710,0.9790,0.9750,0.9770,0.9770,0.9790],
+    "confusion": {
+      "labels": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+      "matrix": [
+        [68,0,0,0,0,0,0,0,0,0,0],
+        [0,61,0,0,0,0,0,0,0,0,0],
+        [0,0,22,0,0,0,0,0,0,0,0],
+        [0,0,0,85,0,0,0,0,0,0,0],
+        [0,0,0,0,19,0,0,0,0,0,0],
+        [0,0,0,0,0,60,0,0,0,0,0],
+        [0,0,0,0,0,0,34,0,0,0,0],
+        [0,0,0,0,0,0,0,9,0,0,0],
+        [0,10,0,0,0,0,0,0,98,0,0],
+        [0,0,0,0,0,0,0,0,0,25,0],
+        [0,0,0,0,0,0,0,0,0,0,6]
+      ]
+    },
+    "per_class": [
+      {"short":"AWH","full":"Abdominal_Wall_Hernia","precision":1.00,"recall":1.00,"f1":1.00,"support":68},
+      {"short":"BU","full":"Bulky_Uterus","precision":0.85,"recall":1.00,"f1":0.92,"support":61},
+      {"short":"DM","full":"Duodenum_Mass","precision":1.00,"recall":1.00,"f1":1.00,"support":22},
+      {"short":"HM","full":"Hepatic_Mass","precision":1.00,"recall":1.00,"f1":1.00,"support":85},
+      {"short":"LSOL","full":"Liver_SOL","precision":1.00,"recall":1.00,"f1":1.00,"support":19},
+      {"short":"MA","full":"Metastatic_Adenocarcinoma","precision":1.00,"recall":1.00,"f1":1.00,"support":60},
+      {"short":"ML","full":"Metastatic_Lesions","precision":1.00,"recall":1.00,"f1":1.00,"support":34},
+      {"short":"MHCC","full":"Multicentric_HCC","precision":1.00,"recall":1.00,"f1":1.00,"support":9},
+      {"short":"N","full":"Normal","precision":1.00,"recall":0.99,"f1":1.00,"support":108},
+      {"short":"OC","full":"Ovary_Cyst","precision":1.00,"recall":0.90,"f1":0.95,"support":25},
+      {"short":"RCC","full":"Renal_Cortical_Cysts","precision":1.00,"recall":1.00,"f1":1.00,"support":6}
+    ],
+    "macro": { "precision": 0.96, "recall": 0.96, "f1": 0.96 }
+  },
+
+  "resnet50": {
+    "name": "ResNet50 Classifier",
+    "accuracy": 1.0000,
+    "description": "Keras ResNet50 model trained for 11-class abdominal CT classification.",
+    "classes_full": [
+      "Abdominal_Wall_Hernia","Bulky_Uterus","Duodenum_Mass","Hepatic_Mass",
+      "Liver_SOL","Metastatic_Adenocarcinoma","Metastatic_Lesions",
+      "Multicentric_HCC","Normal","Ovary_Cyst","Renal_Cortical_Cysts"
+    ],
+    "class_short": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+    "epochs": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+    "trainLoss": [3.4609,1.7767,1.3800,1.1312,1.0629,0.9780,0.9276,0.9034,0.8594,0.8127,0.7832,0.7697,0.7354,0.7228,0.6949,0.6839,0.6635,0.6529,0.6505,0.6231],
+    "valLoss":   [1.6443,1.2900,1.1271,0.9861,0.9285,0.8321,0.8318,0.8145,0.8170,0.7881,0.7175,0.7175,0.6990,0.6762,0.6684,0.6483,0.6335,0.6370,0.6009,0.5931],
+    "trainAcc":  [0.2440,0.6932,0.8173,0.8866,0.9113,0.9241,0.9480,0.9488,0.9566,0.9588,0.9698,0.9761,0.9756,0.9806,0.9830,0.9823,0.9882,0.9799,0.9896,0.9888],
+    "valAcc":    [0.7425,0.8451,0.8913,0.9557,0.9497,0.9819,0.9759,0.9718,0.9638,0.9598,0.9940,0.9899,0.9960,0.9980,0.9960,0.9980,0.9960,0.9920,0.9980,1.0000],
+    "confusion": {
+      "labels": ["AWH","BU","DM","HM","LSOL","MA","ML","MHCC","N","OC","RCC"],
+      "matrix": [
+        [68,0,0,0,0,0,0,0,0,0,0],
+        [0,61,0,0,0,0,0,0,0,0,0],
+        [0,0,22,0,0,0,0,0,0,0,0],
+        [0,0,0,85,0,0,0,0,0,0,0],
+        [0,0,0,0,19,0,0,0,0,0,0],
+        [0,0,0,0,0,60,0,0,0,0,0],
+        [0,0,0,0,0,0,34,0,0,0,0],
+        [0,0,0,0,0,0,0,9,0,0,0],
+        [0,0,0,0,0,0,0,0,108,0,0],
+        [0,0,0,0,0,0,0,0,0,25,0],
+        [0,0,0,0,0,0,0,0,0,0,6]
+      ]
+    },
+    "per_class": [
+      {"short":"AWH","full":"Abdominal_Wall_Hernia","precision":1.0,"recall":1.0,"f1":1.0,"support":68},
+      {"short":"BU","full":"Bulky_Uterus","precision":1.0,"recall":1.0,"f1":1.0,"support":61},
+      {"short":"DM","full":"Duodenum_Mass","precision":1.0,"recall":1.0,"f1":1.0,"support":22},
+      {"short":"HM","full":"Hepatic_Mass","precision":1.0,"recall":1.0,"f1":1.0,"support":85},
+      {"short":"LSOL","full":"Liver_SOL","precision":1.0,"recall":1.0,"f1":1.0,"support":19},
+      {"short":"MA","full":"Metastatic_Adenocarcinoma","precision":1.0,"recall":1.0,"f1":1.0,"support":60},
+      {"short":"ML","full":"Metastatic_Lesions","precision":1.0,"recall":1.0,"f1":1.0,"support":34},
+      {"short":"MHCC","full":"Multicentric_HCC","precision":1.0,"recall":1.0,"f1":1.0,"support":9},
+      {"short":"N","full":"Normal","precision":1.0,"recall":1.0,"f1":1.0,"support":108},
+      {"short":"OC","full":"Ovary_Cyst","precision":1.0,"recall":1.0,"f1":1.0,"support":25},
+      {"short":"RCC","full":"Renal_Cortical_Cysts","precision":1.0,"recall":1.0,"f1":1.0,"support":6}
+    ],
+    "macro": { "precision": 1.0, "recall": 1.0, "f1": 1.0 }
+  }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Abdominal CT Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOP NAVBAR -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- LOGO + TITLE -->
+      <div class="logo-section">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <span class="logo-text">CT Diagnosis Dashboard</span>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="navbar">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('predict_page') }}">Predict</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#metrics">Metrics</a></li>
+          <li><a href="#curves">Curves</a></li>
+          <li><a href="#matrix">Confusion Matrix</a></li>
+          <li><a href="#perclass">Per-Class</a></li>
+        </ul>
+      </nav>
+
+      <!-- THEME + MOBILE (logo left, nav center, controls right) -->
+      <div class="header-controls">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <!-- Sun -->
+          <svg class="icon sun" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg>
+          <!-- Moon -->
+          <svg class="icon moon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <header class="header">
+      <div>
+        <h1>Abdominal CT – Model Results</h1>
+        <p class="subtitle">
+          Select a model to view training curves, confusion matrix, and per-class metrics.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <!-- MODEL SELECTOR (professional shell like predict page) -->
+      <section id="overview" class="section">
+        <div class="dash-shell">
+          <div class="dash-grid">
+            <div class="dash-field">
+              <label for="modelSelect">Model</label>
+              <select id="modelSelect" class="input-select"></select>
+              <div class="hint muted">Select a model to load its stored training logs and evaluation.</div>
+            </div>
+
+            <div class="dash-field desc">
+              <label>Description</label>
+              <div id="modelDescription" class="desc-box muted">–</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERALL METRICS -->
+      <section id="metrics" class="section card">
+        <h2>Overall metrics</h2>
+        <div class="metric-row">
+          <span>Best / Final Accuracy:</span>
+          <strong id="metricBestValAcc">–</strong>
+        </div>
+        <div class="metric-row">
+          <span>Total epochs:</span>
+          <strong id="metricEpochs">–</strong>
+        </div>
+        <p class="muted small">
+          Values are computed from the per-epoch logs loaded for the selected model.
+        </p>
+      </section>
+
+      <!-- CURVES -->
+      <section id="curves" class="section curves-grid">
+        <div class="card">
+          <h2>Loss Curve</h2>
+          <canvas id="lossChart" width="420" height="260"></canvas>
+          <p class="muted small">Training loss and validation loss per epoch.</p>
+        </div>
+
+        <div class="card">
+          <h2>Accuracy Curve</h2>
+          <canvas id="accuracyChart" width="420" height="260"></canvas>
+          <p class="muted small">Training accuracy and validation accuracy per epoch.</p>
+        </div>
+      </section>
+
+      <!-- CONFUSION MATRIX + LEGEND -->
+      <section id="matrix" class="section card">
+        <h2>Confusion Matrix</h2>
+        <div id="confusionMatrixContainer"></div>
+
+        <div class="legend-block">
+          <h3>Class Legend</h3>
+          <table class="legend-table" id="legendTable"></table>
+        </div>
+
+        <p class="muted small">Rows = true class, columns = predicted class.</p>
+      </section>
+
+      <!-- PER-CLASS PERFORMANCE -->
+      <section id="perclass" class="section card">
+        <h2>Per-Class Performance</h2>
+        <table class="perf-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1</th>
+              <th>Support</th>
+            </tr>
+          </thead>
+          <tbody id="perfTableBody"></tbody>
+        </table>
+
+        <p class="muted small" id="macroMetrics"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Abdominal CT thesis – model result viewer.</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+models/
+__pycache__/
+uploads/
+uploads_cleaned/
+.vscode/
